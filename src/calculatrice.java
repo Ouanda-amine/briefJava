@@ -4,22 +4,34 @@ import java.util.Scanner;
 public class calculatrice{
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        boolean isValid = true;
 
         int choix=0;
 
         do {
-            try {
+            System.out.println("entrez 1 pour l' addition");
+            System.out.println("entrez 2 pour la soustraction");
+            System.out.println("entrez 3 pour la multipilation");
+            System.out.println("entrez 4 pour la devision");
+            System.out.println("entrez 5 pour la puissance");
+            System.out.println("entrez 6 pour la racine carre");
+            System.out.println("entrez 7 pour la factorielle ");
+            System.out.println("entrez 8 pour Quitter \n");
 
-                System.out.println("entrez 1 pour l' addition");
-                System.out.println("entrez 2 pour la soustraction");
-                System.out.println("entrez 3 pour la multipilation");
-                System.out.println("entrez 4 pour la devision");
-                System.out.println("entrez 5 pour la puissance");
-                System.out.println("entrez 6 pour la racine carre");
-                System.out.println("entrez 7 pour la factorielle ");
-                System.out.println("entrez 8 pour Quitter \n");
 
-                choix = scan.nextInt();
+            while (isValid){
+                try {
+                    if(isValid==true);
+
+                    choix = scan.nextInt();
+                    break;
+                }catch (InputMismatchException e){
+                    System.out.println("type invalide ");
+                    scan.nextLine();
+
+
+                }
+            }
                 if(choix ==8 ){
                     System.out.println("au revoir");
                     break;
@@ -64,15 +76,10 @@ public class calculatrice{
                             break;
                         default:
                             System.out.println("choix indisponible");
-                            break;
                     }
 
                 }
-            }catch (InputMismatchException e){
-                System.out.println("type invalide ");
-                scan.next();
 
-            }
 
         }    while (choix != 0 ) ;
         scan.close();
