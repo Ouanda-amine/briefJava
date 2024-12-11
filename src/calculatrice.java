@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class calculatrice{
@@ -6,7 +7,8 @@ public class calculatrice{
 
         int choix=0;
 
-            do {
+        do {
+            try {
 
                 System.out.println("entrez 1 pour l' addition");
                 System.out.println("entrez 2 pour la soustraction");
@@ -17,24 +19,28 @@ public class calculatrice{
                 System.out.println("entrez 7 pour la factorielle ");
                 System.out.println("entrez 8 pour Quitter \n");
 
-
                 choix = scan.nextInt();
-                if(choix ==8){
+                if(choix ==8 ){
                     System.out.println("au revoir");
                     break;
                 }
 
-                if (choix == 6 ) {
+
+
+
+                if (choix == 6) {
                     System.out.println("entrez le nombre");
                     int n = scan.nextInt();
                     System.out.println("le resultat  est :  " + RacineCarre(n));
 
 
-                } else if (choix == 7){
+                } else if (choix == 7) {
                     System.out.println("entrez le nombre");
                     int e = scan.nextInt();
                     System.out.println("le resultat est :  " + calculatrice.factorielle(e));
 
+                } else if (choix > 8) {
+                    System.out.println("choix  invalide");
                 } else {
                     System.out.println("entrez les deux nombres");
                     int a = scan.nextInt();
@@ -62,7 +68,14 @@ public class calculatrice{
                     }
 
                 }
-            }    while (choix != 0 || choix  < 8) ;
+            }catch (InputMismatchException e){
+                System.out.println("type invalide ");
+                scan.next();
+
+            }
+
+        }    while (choix != 0 ) ;
+        scan.close();
 
     }
     public static int addition(int a , int b){
