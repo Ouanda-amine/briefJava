@@ -69,7 +69,12 @@ public class calculatrice{
                             System.out.println("le resultat est \n " + calculatrice.multipilation(a, b));
                             break;
                         case 4:
-                            System.out.println("le resultat est \n  " + calculatrice.devision(a, b));
+                            if(b == 0){
+                                System.out.println("la devision par 0 est impossible");
+                            }else{
+                                System.out.println("le resultat est \n  " + calculatrice.devision(a, b));
+                            }
+
                             break;
                         case 5:
                             System.out.println("la puissance est \n  " + calculatrice.puissance(a, b));
